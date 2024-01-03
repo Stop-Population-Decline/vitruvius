@@ -6,24 +6,26 @@ import tailwind from '@astrojs/tailwind';
 export default defineConfig({
 	integrations: [
 		starlight({
-			title: 'Docs with Tailwind',
+			title: 'Ten Books',
 			social: {
 				github: 'https://github.com/withastro/starlight',
 			},
 			sidebar: [
 				{
-					label: 'Guides',
-					items: [
-						// Each item here is one entry in the navigation menu.
-						{ label: 'Example Guide', link: '/guides/example/' },
-					],
-				},
-				{
-					label: 'Reference',
-					autogenerate: { directory: 'reference' },
+					label: 'Research Notes',
+					autogenerate: { directory: 'research' },
 				},
 			],
 			customCss: ['./src/tailwind.css'],
+			defaultLocale: 'en',
+			locales: {
+			  en: {
+				label: 'English',
+			  },
+			  jp: {
+				label: 'Japanese',
+			  },
+			},
 		}),
 		tailwind({ applyBaseStyles: false }),
 	],
