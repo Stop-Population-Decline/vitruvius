@@ -6,7 +6,7 @@ import tailwind from '@astrojs/tailwind';
 export default defineConfig({
 	integrations: [
 		starlight({
-			title: 'Ten Books',
+			title: 'Vitruvius',
 			social: {
 				github: 'https://github.com/withastro/starlight',
 			},
@@ -17,14 +17,15 @@ export default defineConfig({
 				},
 			],
 			customCss: ['./src/tailwind.css'],
-			defaultLocale: 'en',
+			defaultLocale: 'root', // optional
 			locales: {
-			  en: {
-				label: 'English',
-			  },
-			  ja: {
-				label: 'Japanese',
-			  },
+				root: {
+					label: 'English',
+					lang: 'en', // lang is required for root locales
+				},
+				ja: {
+					label: 'Japanese',
+				},
 			},
 		}),
 		tailwind({ applyBaseStyles: false }),
