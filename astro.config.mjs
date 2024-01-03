@@ -22,7 +22,7 @@ export default defineConfig({
 			  en: {
 				label: 'English',
 			  },
-			  jp: {
+			  ja: {
 				label: 'Japanese',
 			  },
 			},
