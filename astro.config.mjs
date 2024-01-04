@@ -8,7 +8,10 @@ export default defineConfig({
 		starlight({
 			title: 'Vitruvius',
 			social: {
-				github: 'https://github.com/withastro/starlight',
+				github: 'https://github.com/Stop-Population-Decline/vitruvius',
+				mastodon: 'https://mastodon.social/@stoppopulationdecline',
+				threads: 'https://www.threads.net/@stoppopulationdecline',
+				youtube: 'http://www.youtube.com/@stoppopulationdecline',
 			},
 			sidebar: [
 				{ label: 'Stop Population Decline (SPD)', link: 'https://stoppopulationdecline.org' },
@@ -20,12 +23,12 @@ export default defineConfig({
 			],
 			head: [{
 				tag: 'meta',
-				attributes: {
+				attrs: {
 					name: 'ahrefs-site-verification',
 					content: '43e11f8b01ac09eae0c1d5137e5472c4fbc683844b5349b3aaa4efc23d3fb0b2',
 				}
 			},
-			{ tag: 'meta', attribute: { name: "google-site-verification", content: "JcdPH-8wgLFOXHDEMQ_zLE2mj7pUy9OgDzzQxNBAo1Q" } }
+			{ tag: 'meta', attrs: { name: "google-site-verification", content: "JcdPH-8wgLFOXHDEMQ_zLE2mj7pUy9OgDzzQxNBAo1Q" } }
 			],
 			customCss: ['./src/tailwind.css'],
 			defaultLocale: 'root', // optional
