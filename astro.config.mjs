@@ -11,6 +11,8 @@ export default defineConfig({
 				github: 'https://github.com/withastro/starlight',
 			},
 			sidebar: [
+				{ label: 'Stop Population Decline (SPD)', link: 'https://stoppopulationdecline.org' },
+				{ label: 'About SPD', link: 'https://stoppopulationdecline.org/about' },
 				{
 					label: 'Research Notes',
 					autogenerate: { directory: 'research' },
@@ -23,8 +25,11 @@ export default defineConfig({
 					label: 'English',
 					lang: 'en', // lang is required for root locales
 				},
+				es: {
+					label: 'Español',
+				},
 				ja: {
-					label: 'Japanese',
+					label: '日本語',
 				},
 			},
 		}),
