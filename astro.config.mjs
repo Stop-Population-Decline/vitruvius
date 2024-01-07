@@ -6,7 +6,7 @@ import sitemap from "@astrojs/sitemap";
 
 // https://astro.build/config
 export default defineConfig({
-	site: 'https://tenbooks.netlify.app/',
+	site: 'https://docs.stoppopulationdecline.org/',
 	integrations: [starlight({
 		title: 'Vitruvius',
 		social: {
