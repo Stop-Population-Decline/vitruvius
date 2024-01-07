@@ -17,12 +17,24 @@ export default defineConfig({
 		},
 		sidebar: [{
 			label: 'Stop Population Decline (SPD)',
-			link: 'https://stoppopulationdecline.org'
+			link: 'https://stoppopulationdecline.org',  
+			translations: {
+				'es-ES': 'Detener la Disminución de la Población (SPD)',
+				'ja_JP': '人口減少を止める (SPD)',
+			  },
 		}, {
-			label: 'About SPD',
-			link: 'https://stoppopulationdecline.org/about'
+			label: 'Volunteer @ SPD',
+			link: 'https://forms.office.com/r/PbcaH7dQB2',  
+			translations: {
+				'es-ES': 'Voluntario en SPD',
+				'ja_JP': 'SPDでボランティア',
+			  },
 		}, {
-			label: 'Research Notes',
+			label: 'Research Notes',  
+			translations: {
+				'es-ES': 'Notas de Investigaci',
+				'ja_JP': '研究ノート',
+			  },
 			autogenerate: {
 				directory: 'research'
 			}
