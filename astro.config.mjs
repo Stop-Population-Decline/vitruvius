@@ -1,8 +1,9 @@
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
 import tailwind from '@astrojs/tailwind';
-
 import sitemap from "@astrojs/sitemap";
+
+import robotsTxt from "astro-robots-txt";
 
 // https://astro.build/config
 export default defineConfig({
@@ -17,24 +18,24 @@ export default defineConfig({
 		},
 		sidebar: [{
 			label: 'Stop Population Decline (SPD)',
-			link: 'https://stoppopulationdecline.org',  
+			link: 'https://stoppopulationdecline.org',
 			translations: {
 				es: 'Detener la Disminución de la Población (SPD)',
-				ja: '人口減少を止める (SPD)',
-			  },
+				ja: '人口減少を止める (SPD)'
+			}
 		}, {
 			label: 'Volunteer @ SPD',
-			link: 'https://forms.office.com/r/PbcaH7dQB2',  
+			link: 'https://forms.office.com/r/PbcaH7dQB2',
 			translations: {
 				es: 'Voluntario en SPD',
-				ja: 'SPDでボランティア',
-			  },
+				ja: 'SPDでボランティア'
+			}
 		}, {
-			label: 'Research Notes',  
+			label: 'Research Notes',
 			translations: {
 				es: 'Notas de Investigaci',
-				ja: '研究ノート',
-			  },
+				ja: '研究ノート'
+			},
 			autogenerate: {
 				directory: 'research'
 			}
@@ -69,15 +70,5 @@ export default defineConfig({
 		}
 	}), tailwind({
 		applyBaseStyles: false
-	}), sitemap({
-		i18n: {
-			defaultLocale: 'en', // All urls that don't contain `es` or `fr` after `https://stargazers.club/` will be treated as default locale, i.e. `en`
-			locales: {
-				en: 'en-US', // The `defaultLocale` value must present in `locales` keys
-				es: 'es-ES',
-				ja: 'ja_JP',
-			},
-		},
-	}),
-	]
+	}), sitemap(), robotsTxt({ sitemap: true })]
 });
