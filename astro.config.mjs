@@ -2,8 +2,9 @@ import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
 import tailwind from '@astrojs/tailwind';
 import sitemap from "@astrojs/sitemap";
-
 import robotsTxt from "astro-robots-txt";
+
+import partytown from "@astrojs/partytown";
 
 // https://astro.build/config
 export default defineConfig({
@@ -52,6 +53,24 @@ export default defineConfig({
 				name: "google-site-verification",
 				content: "JcdPH-8wgLFOXHDEMQ_zLE2mj7pUy9OgDzzQxNBAo1Q"
 			}
+		},
+		{
+			tag: 'script',
+			attrs: {
+				type: "text/partytown",
+				src: "https://www.googletagmanager.com/gtag/js?id=G-CPFSJMVC4F"
+
+			}
+		}, {
+			tag: 'script',
+			attrs: {
+				type:"text/partytown"
+			},
+			content: `
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+			gtag('config', 'G-CPFSJMVC4F');`
 		}],
 		customCss: ['./src/tailwind.css'],
 		defaultLocale: 'root',
@@ -68,7 +87,18 @@ export default defineConfig({
 				label: '日本語'
 			}
 		}
-	}), tailwind({
+	}),
+	tailwind({
 		applyBaseStyles: false
-	}), sitemap(), robotsTxt({ sitemap: true })]
+	}),
+	sitemap(),
+	robotsTxt({
+		sitemap: true
+	}),
+	partytown({
+		// Example: Add dataLayer.push as a forwarding-event.
+		config: {
+			forward: ['dataLayer.push'],
+		},
+	}),]
 });
