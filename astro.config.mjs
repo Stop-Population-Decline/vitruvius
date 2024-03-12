@@ -8,7 +8,7 @@ import partytown from "@astrojs/partytown";
 
 // https://astro.build/config
 export default defineConfig({
-	site: 'https://docs.stoppopulationdecline.org/',
+	site: 'https://docs.population.fyi/',
 	integrations: [starlight({
 		title: 'Vitruvius',
 		social: {
